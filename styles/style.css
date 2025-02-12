@@ -71,7 +71,7 @@ h1 {
     align-items: center;
     margin-top: 20px;
     position: relative; /* Add this line */
-    height: 50px; /* Set a height for the container */
+    height: auto; /* Adjust height for the container */
     width: auto;
 }
 
@@ -89,3 +89,15 @@ h1 {
     max-width: 200px; /* Maintain aspect ratio */
 }
 
+/* Responsive design */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    #yesBtn, #noBtn {
+        width: 50px; /* Fixed width */
+        height: 50px; /* Fixed height */
+        margin: 5px 0;
+    }
+}
