@@ -1,6 +1,3 @@
-// This file contains the JavaScript code for the Valentine's Day webpage. 
-// It handles interactive features such as button clicks and animations.
-
 document.addEventListener('DOMContentLoaded', () => {
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
@@ -45,9 +42,9 @@ document.addEventListener('DOMContentLoaded', () => {
             gifContainer.src = gifs[currentGifIndex];
             currentGifIndex = (currentGifIndex + 1) % gifs.length;
 
-              // Grow the "Yes" button slowly and keep the increased size
-              yesBtnScale += 0.5; // Increment the scale
-              yesBtn.style.transform = `scale(${yesBtnScale})`;
-          });
-      }
-  });
+            // Grow the "Yes" button slowly and keep the increased size
+            yesBtnScale += 0.3; // Increment the scale
+            yesBtn.style.transform = `scale(${yesBtnScale})`;
+        });
+    }
+});
