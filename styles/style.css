@@ -69,7 +69,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 50px;
     position: relative; /* Add this line */
     height: auto; /* Adjust height for the container */
     width: auto;
