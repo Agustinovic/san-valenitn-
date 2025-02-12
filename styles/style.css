@@ -1,0 +1,97 @@
+body {
+    background-color: #ffe6e6;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ff3366;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #ff3366;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #ff1a4d;
+}
+
+#yesBtn, #noBtn {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #ffc0cb;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Add this line for smooth scaling */
+}
+
+#yesBtn {
+    background-color: #28a745; /* Green background */
+    color: white;
+}
+
+#noBtn {
+    background-color: #dc3545; /* Red background */
+    color: white;
+}
+
+#yesBtn span, #noBtn span {
+    font-size: 18px;
+    color: #fcf4f4;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative; /* Add this line */
+    height: 200px; /* Set a height for the container */
+}
+
+.gif-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gif-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    width: 100%; /* Set a larger width for the GIF */
+    max-width: 250px; /* Maintain aspect ratio */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    #yesBtn, #noBtn {
+        width: 100%;
+        margin: 5px 0;
+    }
+}
