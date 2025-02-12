@@ -89,14 +89,3 @@ h1 {
     max-width: 200px; /* Maintain aspect ratio */
 }
 
-/* Responsive design */
-@media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
-    }
-
-    #yesBtn, #noBtn {
-        width: 100%;
-        margin: 5px 0;
-    }
-}
