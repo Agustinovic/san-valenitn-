@@ -86,7 +86,7 @@ h1 {
     height: auto;
     border-radius: 10px;
     width: 100%; /* Set a larger width for the GIF */
-    max-width: 200px; /* Maintain aspect ratio */
+    max-width: 100px; /* Maintain aspect ratio */
 }
 
 /* Responsive design */
