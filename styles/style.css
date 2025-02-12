@@ -37,13 +37,17 @@ h1 {
 }
 
 #yesBtn, #noBtn {
-    padding: 10px 20px;
+    width: 50px; /* Fixed width */
+    height: 50px; /* Fixed height */
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
     border: 2px solid #ffc0cb;
     border-radius: 10px;
     transition: transform 0.5s ease; /* Add this line for smooth scaling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #yesBtn {
@@ -82,7 +86,7 @@ h1 {
     height: auto;
     border-radius: 10px;
     width: 100%; /* Set a larger width for the GIF */
-    max-width: 250px; /* Maintain aspect ratio */
+    max-width: 200px; /* Maintain aspect ratio */
 }
 
 /* Responsive design */
