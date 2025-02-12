@@ -88,16 +88,3 @@ h1 {
     width: 100%; /* Set a larger width for the GIF */
     max-width: 100px; /* Maintain aspect ratio */
 }
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
-    }
-
-    #yesBtn, #noBtn {
-        width: 50px; /* Fixed width */
-        height: 50px; /* Fixed height */
-        margin: 5px 0;
-    }
-}
