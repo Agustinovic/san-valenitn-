@@ -122,7 +122,7 @@ h2#lateSubtitle {
     height: auto;
     border-radius: 10px;
     width: 100%; /* Set a larger width for the GIF */
-    max-width: 300px; /* Maintain aspect ratio */
+    max-width: 273px; /* Maintain aspect ratio */
 }
 #leftGif, #rightGif {
     position: absolute;
