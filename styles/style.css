@@ -10,6 +10,12 @@ h1 {
     text-align: center;
     color: #ff3366;
 }
+h2#subtitle {
+    text-align: center; /* Centra el subtítulo */
+    font-size: 14px; /* Haz el subtítulo más pequeño */
+    color: #ff3366; /* Puedes ajustar el color si lo deseas */
+    margin-top: 10px; /* Añade un poco de espacio superior */
+}
 
 .container {
     max-width: 800px;
