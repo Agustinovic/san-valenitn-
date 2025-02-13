@@ -16,6 +16,12 @@ h2#subtitle {
     color: #ff3366; /* Puedes ajustar el color si lo deseas */
     margin-top: 10px; /* Añade un poco de espacio superior */
 }
+h2#latesubtitle {
+    text-align: center; /* Centra el subtítulo */
+    font-size: 10px; /* Haz el subtítulo más pequeño */
+    color: #f85b82; /* Puedes ajustar el color si lo deseas */
+    margin-top: 8px; /* Añade un poco de espacio superior */
+}
 
 .container {
     max-width: 800px;
