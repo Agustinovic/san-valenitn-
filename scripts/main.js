@@ -84,6 +84,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Change the header text
             header.textContent = 'YIPIIIII TE AMO';
+            
+             // Show the subtitle
+             subtitle.style.display = 'block';
         });
     }
 });
