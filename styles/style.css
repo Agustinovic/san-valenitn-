@@ -51,6 +51,7 @@ h2#lateSubtitle {
 }
 
 #noBtn {
+    width: 60px;
     font-size: 15px;
     margin: 10px;
     cursor: pointer;
