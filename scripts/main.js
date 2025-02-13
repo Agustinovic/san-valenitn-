@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rightGif.style.display = 'block';
 
             // Make the GIF larger and move it down
-            gifContainer.style.transform = 'scale(1.5) translateY(75px)'; // Adjust the scale and move down
+            gifContainer.style.transform = 'scale(1.5) translateY(65px)'; // Adjust the scale and move down
             gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
 
              // Hide the "No" button
