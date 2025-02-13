@@ -49,7 +49,28 @@ h2#lateSubtitle {
     background-color: #ff1a4d;
 }
 
-#yesBtn, #noBtn {
+#noBtn {
+    width: 50px; /* Fixed width */
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: 2px solid #ffc0cb;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Add this line for smooth scaling */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px; /* Add padding to make the button look better */
+    background-color: #dc3545; /* Red background */
+    color: white;
+}
+
+#noBtn span {
+    font-size: 18px;
+    color: #fcf4f4;
+}
+
+#yesBtn {
     width: 50px; /* Fixed width */
     height: 50px; /* Fixed height */
     font-size: 16px;
@@ -61,22 +82,15 @@ h2#lateSubtitle {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-#yesBtn {
     background-color: #28a745; /* Green background */
     color: white;
 }
 
-#noBtn {
-    background-color: #dc3545; /* Red background */
-    color: white;
-}
-
-#yesBtn span, #noBtn span {
+#yesBtn span {
     font-size: 18px;
     color: #fcf4f4;
 }
+
 
 .button-container {
     display: flex;
