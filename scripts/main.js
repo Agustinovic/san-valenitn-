@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noBtnTexts = [
         'por que?',
         'yapo :(',
-        'ya si igual me esforce',
+        'igual me esforce',
         'que hice mal?',
         'es muy tarde?',
         'acepta ya pls',
@@ -84,9 +84,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Change the header text
             header.textContent = 'YIPIIIII TE AMO';
-            
-             // Show the subtitle
-             subtitle.style.display = 'block';
+
+             // Show the subtitles
+            subtitle.style.display = 'block';
+            lateSubtitle.style.display = 'block';
+
+              // Hide the "No" button
+            noBtn.style.display = 'none';
+
+             // Hide the "No" button
+             yesBtn.style.display = 'none';
+
+             // Make the GIF larger and move it down
+            gifContainer.style.transform = 'scale(1.5) translateY(20px)'; // Adjust the scale and move down
+            gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
         });
     }
 });
