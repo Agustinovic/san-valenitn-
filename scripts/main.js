@@ -4,8 +4,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
-    const gifContainer = document.querySelector('.gif-container img');
+    const gifContainer = document.querySelector('.gif-container img#mainGif');
+    const leftGif = document.getElementById('leftGif');
+    const rightGif = document.getElementById('rightGif');
     const header = document.querySelector('h1');
+    const subtitle = document.getElementById('subtitle'); // Selecciona el primer subtítulo
+    const lateSubtitle = document.getElementById('lateSubtitle'); // Selecciona el segundo subtítulo
     const gifs = [
         'imagenes/catsad-sad.gif',
         'imagenes/cat-sad.gif',
@@ -23,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noBtnTexts = [
         'por que?',
         'yapo :(',
-        'igual me esforce',
+        'ya si igual me esforce',
         'que hice mal?',
         'es muy tarde?',
         'acepta ya pls',
@@ -67,8 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
             currentTextIndex = (currentTextIndex + 1) % noBtnTexts.length;
 
             // Grow the "Yes" button slowly and keep the increased size
-            yesBtnScale += 0.1; // Increment the scale
+            yesBtnScale += 0.3; // Increment the scale
             yesBtn.style.transform = `scale(${yesBtnScale})`;
+            
+            // Adjust the margin-top of the "Yes" button to avoid collision with the GIF
+            yesBtn.style.marginTop = `${yesBtnScale * 30}px`;
 
             // Shrink the "No" button slowly and keep the decreased size
             noBtnScale -= 0.02; // Decrement the scale
@@ -85,19 +92,23 @@ document.addEventListener('DOMContentLoaded', () => {
             // Change the header text
             header.textContent = 'YIPIIIII TE AMO';
 
-             // Show the subtitles
+            // Show the subtitles
             subtitle.style.display = 'block';
             lateSubtitle.style.display = 'block';
 
-              // Hide the "No" button
-            noBtn.style.display = 'none';
+            // Show the additional GIFs
+            leftGif.style.display = 'block';
+            rightGif.style.display = 'block';
+
+            // Make the GIF larger and move it down
+            gifContainer.style.transform = 'scale(2) translateY(75px)'; // Adjust the scale and move down
+            gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
 
              // Hide the "No" button
-             yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
 
-             // Make the GIF larger and move it down
-            gifContainer.style.transform = 'scale(1.5) translateY(20px)'; // Adjust the scale and move down
-            gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
+            // Hide the "No" button
+            yesBtn.style.display = 'none';
         });
     }
 });
