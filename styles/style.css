@@ -8,7 +8,7 @@ body {
 
 h1 {
     font-family: cursive;
-    font-size: 50px;
+    font-size: 40px;
     text-align: center;
     color: #ffd1ed;
 }
@@ -16,7 +16,7 @@ h1 {
 h2#subtitle {
     font-family: cursive;
     text-align: center; /* Centra el subtítulo */
-    font-size: 25px; /* Haz el subtítulo más pequeño */
+    font-size: 20px; /* Haz el subtítulo más pequeño */
     color: #ffd1ed; /* Puedes ajustar el color si lo deseas */
     margin-top: 5px; /* Añade un poco de espacio superior */
 }
@@ -24,7 +24,7 @@ h2#subtitle {
 h2#lateSubtitle {
     font-family: cursive;
     text-align: center; /* Centra el subtítulo */
-    font-size: 20px; /* Haz el subtítulo más pequeño */
+    font-size: 15px; /* Haz el subtítulo más pequeño */
     color: #ffd1ed; /* Puedes ajustar el color si lo deseas */
     margin-top: 5px; /* Añade un poco de espacio superior */
 }
@@ -105,7 +105,6 @@ h2#lateSubtitle {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     position: relative; /* Add this line */
     height: auto; /* Adjust height for the container */
     width: auto;
