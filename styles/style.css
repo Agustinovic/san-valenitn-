@@ -17,6 +17,7 @@ h2#subtitle {
     color: #ff3366; /* Puedes ajustar el color si lo deseas */
     margin-top: 10px; /* Añade un poco de espacio superior */
 }
+
 h2#lateSubtitle {
     text-align: center; /* Centra el subtítulo */
     font-size: 12px; /* Haz el subtítulo más pequeño */
@@ -50,7 +51,6 @@ h2#lateSubtitle {
 }
 
 #noBtn {
-    width: 60px;
     font-size: 15px;
     margin: 10px;
     cursor: pointer;
@@ -71,8 +71,6 @@ h2#lateSubtitle {
 }
 
 #yesBtn {
-    width: 50px; /* Fixed width */
-    height: 50px; /* Fixed height */
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
@@ -82,6 +80,7 @@ h2#lateSubtitle {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 10px 20px; /* Add padding to make the button look better */
     background-color: #28a745; /* Green background */
     color: white;
 }
@@ -90,7 +89,6 @@ h2#lateSubtitle {
     font-size: 18px;
     color: #fcf4f4;
 }
-
 
 .button-container {
     display: flex;
@@ -114,4 +112,18 @@ h2#lateSubtitle {
     border-radius: 10px;
     width: 100%; /* Set a larger width for the GIF */
     max-width: 150px; /* Maintain aspect ratio */
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+    .button-container {
+        flex-direction: column;
+    }
+
+    #yesBtn, #noBtn {
+        width: auto; /* Allow buttons to adjust to content */
+        height: auto; /* Allow buttons to adjust to content */
+        margin: 5px 0;
+        padding: 10px 20px; /* Ensure padding is consistent */
+    }
 }
