@@ -1,130 +1,114 @@
-body {
-    background-color: #fca8f8;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 20px;
-}
+// This file contains the JavaScript code for the Valentine's Day webpage. 
+// It handles interactive features such as button clicks and animations.
 
-h1 {
-    text-align: center;
-    color: #ff3366;
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const noBtn = document.getElementById('noBtn');
+    const yesBtn = document.getElementById('yesBtn');
+    const gifContainer = document.querySelector('.gif-container img#mainGif');
+    const leftGif = document.getElementById('leftGif');
+    const rightGif = document.getElementById('rightGif');
+    const header = document.querySelector('h1');
+    const subtitle = document.getElementById('subtitle'); // Selecciona el primer subtítulo
+    const lateSubtitle = document.getElementById('lateSubtitle'); // Selecciona el segundo subtítulo
+    const gifs = [
+        'imagenes/catsad-sad.gif',
+        'imagenes/cat-sad.gif',
+        'imagenes/sad-kitty-sad-cat.gif',
+        'imagenes/sad-cat-sad.gif',
+        'imagenes/cat-holding-head-cat.gif',
+        'imagenes/cat.gif',
+        'imagenes/rest-well.gif',
+        'imagenes/sad-cat.gif',
+        'imagenes/sahnap-cat.gif',
+    ];
+    const yesGifs = [
+        'imagenes/silly-cat-silly.gif',
+    ];
+    const noBtnTexts = [
+        'por que?',
+        'yapo :(',
+        'ya si igual me esforce',
+        'que hice mal?',
+        'es muy tarde?',
+        'acepta ya pls',
+        'en serio?',
+        'ya bueno, toy triste :('
+    ];
+    let currentGifIndex = 0;
+    let currentYesGifIndex = 0;
+    let currentTextIndex = 0;
+    let yesBtnScale = 1; // Initial scale for the "Yes" button
+    let noBtnScale = 1; // Initial scale for the "No" button
 
-h2#subtitle {
-    text-align: center; /* Centra el subtítulo */
-    font-size: 14px; /* Haz el subtítulo más pequeño */
-    color: #ff3366; /* Puedes ajustar el color si lo deseas */
-    margin-top: 10px; /* Añade un poco de espacio superior */
-}
+    if (noBtn) {
+        noBtn.addEventListener('click', () => {
+            // Change the position of the button randomly
+            const container = noBtn.parentElement;
+            const containerWidth = container.offsetWidth;
+            const containerHeight = container.offsetHeight;
 
-h2#lateSubtitle {
-    text-align: center; /* Centra el subtítulo */
-    font-size: 12px; /* Haz el subtítulo más pequeño */
-    color: #f85b82; /* Puedes ajustar el color si lo deseas */
-    margin-top: 5px; /* Añade un poco de espacio superior */
-}
+            let randomX, randomY;
+            do {
+                randomX = Math.floor(Math.random() * (containerWidth - noBtn.offsetWidth));
+                randomY = Math.floor(Math.random() * (containerHeight - noBtn.offsetHeight));
+            } while (
+                randomX < yesBtn.offsetLeft + yesBtn.offsetWidth &&
+                randomX + noBtn.offsetWidth > yesBtn.offsetLeft &&
+                randomY < yesBtn.offsetTop + yesBtn.offsetHeight &&
+                randomY + noBtn.offsetHeight > yesBtn.offsetTop
+            );
 
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+            noBtn.style.position = 'absolute';
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
 
-.button {
-    padding: 10px 20px;
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-    background-color: #ff3366;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
+            // Change the GIF progressively in order
+            gifContainer.src = gifs[currentGifIndex];
+            currentGifIndex = (currentGifIndex + 1) % gifs.length;
 
-.button:hover {
-    background-color: #ff1a4d;
-}
+            // Change the text of the "No" button progressively in order
+            noBtn.textContent = noBtnTexts[currentTextIndex];
+            currentTextIndex = (currentTextIndex + 1) % noBtnTexts.length;
 
-#noBtn {
-    width: 60px;
-    font-size: 15px;
-    margin: 10px;
-    cursor: pointer;
-    border: 2px solid #ffc0cb;
-    border-radius: 10px;
-    transition: transform 0.5s ease; /* Add this line for smooth scaling */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px; /* Add padding to make the button look better */
-    background-color: #dc3545; /* Red background */
-    color: white;
-}
+            // Grow the "Yes" button slowly and keep the increased size
+            yesBtnScale += 0.3; // Increment the scale
+            yesBtn.style.transform = `scale(${yesBtnScale})`;
+            
+            // Adjust the margin-top of the "Yes" button to avoid collision with the GIF
+            yesBtn.style.marginTop = `${yesBtnScale * 30}px`;
 
-#noBtn span {
-    font-size: 18px;
-    color: #fcf4f4;
-}
-
-#yesBtn {
-    font-size: 16px;
-    margin: 10px;
-    cursor: pointer;
-    border: 2px solid #ffc0cb;
-    border-radius: 10px;
-    transition: transform 0.5s ease; /* Add this line for smooth scaling */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 20px; /* Add padding to make the button look better */
-    background-color: #28a745; /* Green background */
-    color: white;
-}
-
-#yesBtn span {
-    font-size: 18px;
-    color: #fcf4f4;
-}
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
-    position: relative; /* Add this line */
-    height: auto; /* Adjust height for the container */
-    width: auto;
-}
-
-.gif-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.gif-container img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    width: 100%; /* Set a larger width for the GIF */
-    max-width: 150px; /* Maintain aspect ratio */
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
-    .button-container {
-        flex-direction: column;
+            // Shrink the "No" button slowly and keep the decreased size
+            noBtnScale -= 0.02; // Decrement the scale
+            noBtn.style.transform = `scale(${noBtnScale})`;
+        });
     }
 
-    #yesBtn, #noBtn {
-        width: auto; /* Allow buttons to adjust to content */
-        height: auto; /* Allow buttons to adjust to content */
-        margin: 5px 0;
-        padding: 10px 20px; /* Ensure padding is consistent */
+    if (yesBtn) {
+        yesBtn.addEventListener('click', () => {
+            // Change the GIF to a happy one
+            gifContainer.src = yesGifs[currentYesGifIndex];
+            currentYesGifIndex = (currentYesGifIndex + 1) % yesGifs.length;
+
+            // Change the header text
+            header.textContent = 'YIPIIIII TE AMO';
+
+            // Show the subtitles
+            subtitle.style.display = 'block';
+            lateSubtitle.style.display = 'block';
+
+            // Show the additional GIFs
+            leftGif.style.display = 'block';
+            rightGif.style.display = 'block';
+
+            // Make the GIF larger and move it down
+            gifContainer.style.transform = 'scale(2) translateY(75px)'; // Adjust the scale and move down
+            gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
+
+             // Hide the "No" button
+            noBtn.style.display = 'none';
+
+            // Hide the "No" button
+            yesBtn.style.display = 'none';
+        });
     }
-}
+});
