@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const noBtn = document.getElementById('noBtn');
     const yesBtn = document.getElementById('yesBtn');
     const gifContainer = document.querySelector('.gif-container img');
+    const header = document.querySelector('h1');
     const gifs = [
         'imagenes/catsad-sad.gif',
         'imagenes/cat-sad.gif',
@@ -69,6 +70,9 @@ document.addEventListener('DOMContentLoaded', () => {
             yesBtnScale += 0.1; // Increment the scale
             yesBtn.style.transform = `scale(${yesBtnScale})`;
 
+            // Shrink the "No" button slowly and keep the decreased size
+            noBtnScale -= 0.02; // Decrement the scale
+            noBtn.style.transform = `scale(${noBtnScale})`;
         });
     }
 
@@ -77,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // Change the GIF to a happy one
             gifContainer.src = yesGifs[currentYesGifIndex];
             currentYesGifIndex = (currentYesGifIndex + 1) % yesGifs.length;
+
+            // Change the header text
+            header.textContent = 'YIPIIIII TE AMO';
         });
     }
 });
