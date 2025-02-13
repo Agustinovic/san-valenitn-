@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
             yesBtn.style.transform = `scale(${yesBtnScale})`;
             
             // Adjust the margin-top of the "Yes" button to avoid collision with the GIF
-            yesBtn.style.marginTop = `${yesBtnScale * 30}px`;
+            yesBtn.style.marginTop = `${yesBtnScale * 15}px`;
 
             // Shrink the "No" button slowly and keep the decreased size
             noBtnScale -= 0.02; // Decrement the scale
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', () => {
             rightGif.style.display = 'block';
 
             // Make the GIF larger and move it down
-            gifContainer.style.transform = 'scale(2) translateY(75px)'; // Adjust the scale and move down
+            gifContainer.style.transform = 'scale(1.5) translateY(75px)'; // Adjust the scale and move down
             gifContainer.style.transition = 'transform 0.5s ease'; // Smooth transition
 
              // Hide the "No" button
