@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ];
     let currentGifIndex = 0;
     let yesBtnScale = 1; // Initial scale for the "Yes" button
+    let noBtnScale = 1; // Initial scale for the "No" button
 
     if (noBtn) {
         noBtn.addEventListener('click', () => {
@@ -43,8 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
             currentGifIndex = (currentGifIndex + 1) % gifs.length;
 
             // Grow the "Yes" button slowly and keep the increased size
-            yesBtnScale += 0.3; // Increment the scale
+            yesBtnScale += 0.1; // Increment the scale
             yesBtn.style.transform = `scale(${yesBtnScale})`;
+
+            // Shrink the "No" button slowly and keep the decreased size
+            noBtnScale -= 0.1; // Decrement the scale
+            noBtn.style.transform = `scale(${noBtnScale})`;
         });
     }
 });
